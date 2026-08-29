@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: board-app-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pass123
+      MYSQL_DATABASE: board_db
+      MYSQL_USER: board_user
+      MYSQL_PASSWORD: board_pass123
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+
+volumes:
+  db_data:
