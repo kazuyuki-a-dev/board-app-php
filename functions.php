@@ -41,3 +41,17 @@ function validatePassword(string $password): string
 
     return '';
 }
+
+// 投稿内容のバリデーション
+function validatePostContent(string $content): string
+{
+    if (trim($content) === '') {
+        return '投稿内容を入力してください';
+    }
+
+    if (mb_strlen($content) > 500) {
+        return '投稿内容は500文字以内で入力してください';
+    }
+
+    return '';
+}
