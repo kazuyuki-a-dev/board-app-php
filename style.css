@@ -1,0 +1,231 @@
+/* 全体のリセット・基本設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+/* コンテナ(カード全体) */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 560px;
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 22px;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ==== ヘッダーメニュー(新要素) ==== */
+.header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eef0f2;
+    font-size: 14px;
+}
+
+.header-menu span {
+    color: #666;
+    margin-right: auto;
+}
+
+.header-menu a {
+    color: #4a90e2;
+    text-decoration: none;
+}
+
+.header-menu a:hover {
+    opacity: 0.7;
+}
+
+/* フォーム共通 */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 13px;
+    color: #666;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    padding: 10px 12px;
+    border: 1px solid #dcdfe3;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4a90e2;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+button:hover {
+    background-color: #3a7bc8;
+}
+
+/* エラーメッセージ */
+.error-message {
+    background-color: #fdecea;
+    color: #c0392b;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+/* ==== 投稿一覧(新要素) ==== */
+.post-list {
+    list-style: none;
+}
+
+.post-list li {
+    padding: 16px 0;
+    border-bottom: 1px solid #eef0f2;
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.post-list li.empty {
+    text-align: center;
+    color: #999;
+    padding: 24px 0;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.post-author {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.post-content {
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: break-all;
+    margin-bottom: 8px;
+}
+
+.post-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.post-actions a,
+.delete-form button {
+    display: inline-flex;
+    align-items: center;
+    height: 26px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 1;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.post-actions a {
+    background-color: #eaf2fc;
+    color: #4a90e2;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+}
+
+.post-actions a:hover {
+    opacity: 1;
+}
+
+.delete-form {
+    margin: 0;
+    display: inline;
+}
+
+.delete-form button {
+    background-color: #fdecea;
+    color: #c0392b;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+}
+
+.delete-form button:hover {
+    opacity: 1;
+}
+
+/* フォーム画面下部の「戻る」リンク */
+.container > a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #666;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.container > a:hover {
+    text-decoration: underline;
+}
+
+/* スマホ対応 */
+@media (max-width: 480px) {
+    .container {
+        padding: 24px 16px;
+    }
+
+    .header-menu {
+        flex-wrap: wrap;
+    }
+}
